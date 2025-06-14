@@ -1,0 +1,7 @@
+from pyngrok import ngrok
+
+ngrok.kill()
+ngrok.set_auth_token("ENTER ngork Authentican token")
+!streamlit run app.py &>/content/log.txt &
+public_url = ngrok.connect(8501)
+print("🚀 Streamlit is running at:", public_url)
